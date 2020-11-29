@@ -1,0 +1,52 @@
+.recensioni{
+    text-align: center;
+    font-family: Kefa;
+}
+
+.recensionetipo{
+    text-align: left;
+    padding-left: 20%;
+    padding-right: 20%;
+    font-family: Kefa;
+    
+}
+
+.part1{
+    font-size: 18px;
+    padding-bottom: 1px;
+    font-family: Kefa;  
+    background-color: #920000;
+    padding-left: 5px;
+    color:white;
+}
+.part2{
+    font-size: 15px;
+    color:black;
+    padding-bottom: 5px;
+    font-family: Kefa;
+
+}
+.part3{
+    font-size: 13px;
+    color:black;
+    padding-bottom: 30px;
+    font-family: Kefa;
+
+}
+.block {
+    display: block;
+    width:100%;
+    border: none;
+    background-color: #920000;
+    color: white;
+    padding: 10px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    font-family: Kefa;
+  }
+  
+  .block:hover {
+    background-color: #ddd;
+    color: black;
+  }
