@@ -17,14 +17,12 @@
   <div class="container-fluid">
     <ul class="nav navbar-nav">
       <li><a href="homepage_public.php">Home</a></li>
-      <li><a href="#">Menu </a></li>
-      <li><a href="#">Contatti</a></li>
-      <li><a href="#">Recensioni</a></li>
-      <li><a href="#">Contatti</a></li>
+      <li><a href="menu.php">Menu </a></li>
+      <li><a href="contatti.php">Contatti</a></li>
+      <li><a href="recensioni_public.php">Recensioni</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li><a href="/opt/lampp/htdocs/Pizzeria/Admin/phplogin/index.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     </ul>
   </div>
 </nav>
