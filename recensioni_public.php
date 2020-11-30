@@ -20,10 +20,10 @@
       <li><a href="homepage_public.php">Home</a></li>
       <li><a href="menu.php">Menu </a></li>
       <li><a href="contatti.php">Contatti</a></li>
-      <li><a href="#">Recensioni</a></li>
+      <li><a href="recensioni_public.php">Recensioni</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="/opt/lampp/htdocs/Pizzeria/Admin/phplogin/index.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li><a href="../index.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     </ul>
   </div>
 </nav>
@@ -31,6 +31,9 @@
 
 <div>
     <h1 class="recensioni">Recensioni</h1>
+    <form method="get" action="scrivirecensione.php">
+      <button class="block">Scrivi un commento</button>
+    </form>
     <div class="recensionetipo">
       <?php
         $servername = "localhost";
@@ -46,32 +49,27 @@
           die("Connection failed: " . $conn->connect_error);
         } 
 
-        $sql = "SELECT `NomeUtente`, `Data`, `Testo` FROM `Commenti` ORDER BY IDCommento DESC LIMIT 30";
+        $sql = "SELECT `NomeUtente`, `Data`, `Testo`, `FK_Nome_Pizza`, `Valutazione` FROM `Commenti` ORDER BY IDCommento DESC LIMIT 40";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
         
           while($row = $result->fetch_assoc()) {
             echo "<p class=\"part1\">" . $row["NomeUtente"] . "</p>";
-            echo "<p class=\"part2\">" . $row["Testo"] . "</p>";
+            echo "<p class=\"part2\">Pizza: " . $row["FK_Nome_Pizza"] . "</p>";
+            echo "<p class=\"part2\">Valutazione: " . $row["Valutazione"] . "</p>";
+            echo "<p class=\"part2\">Commento: " . $row["Testo"] . "</p>";
             echo "<p class=\"part3\">" . $row["Data"] ."</p>";
 
           }
         } else {
           echo "0 results";
         }
-
-
-
-
-
         $conn->close();
       ?>
     </div>
 </div>
-<form method="get" action="scrivirecensione.php">
-  <button class="block">Scrivi un commento</button>
-</form>
+
 
 
 <footer class="endfooter">
