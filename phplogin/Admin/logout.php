@@ -2,5 +2,5 @@
 session_start();
 session_destroy();
 // Redirect to the login page:
-header('Location: /opt/lampp/htdocs/Pizzeria/Public/hompage_public.php');
+header('Location: ../Public/homepage_public.php');
 ?>
