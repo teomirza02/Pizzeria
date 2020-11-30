@@ -18,6 +18,7 @@ td, th {
     cursor: pointer;
     text-align: center;
     font-family: Kefa;
+    margin-bottom: 10px;
   }
   
   .block:hover {
