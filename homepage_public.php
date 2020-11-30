@@ -22,7 +22,7 @@
       <li><a href="recensioni_public.php">Recensioni</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="/opt/lampp/htdocs/Pizzeria/Admin/phplogin/index.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li><a href="../index.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     </ul>
   </div>
 </nav>
