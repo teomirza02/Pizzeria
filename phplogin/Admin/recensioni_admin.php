@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="Stylesheet_admin.css">
     <link rel="stylesheet" href="Stylesheetrecensioniadmin.css">
+    <link rel="stylesheet" href="Stylesheetaggiungipizza.css">
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -29,12 +31,19 @@
   </div>
 </nav>
 
+<form method="POST" action="eliminarecensione.php">
+    <label for="IDCommento">IDPizza da eliminare: </label>
+    <input type="text" id="name" name="IDCommento" placeholder="Introduci IDCommento da eliminare">
+  <button class="block">Elimina Pizza</button>
+</form>
+
 <table>
  <tr>
     <th>IDPizza</th>
     <th>Nome Pizza</th>
     <th>Ingredienti</th>
     <th>Prezzo</th>
+    <th>Valutazione (da 1 a 10)</th>
     <!-- <th class="btn btn-sm btn-danger" href="#"><i class="fas fa-trash-alt"></i> delete</a> -->
  </tr>
 
@@ -52,7 +61,7 @@
     die("Connection failed: " . $conn->connect_error);
   } 
 
-  $sql = "SELECT `IDCommento`, `NomeUtente`, `Data`, `Testo` FROM `Commenti` ";
+  $sql = "SELECT `IDCommento`, `NomeUtente`, `Data`, `Testo`, `Valutazione` FROM `Commenti`";
   $result = $conn->query($sql);
 
   if ($result->num_rows > 0) {
@@ -63,7 +72,8 @@
       echo "<td class=\"#\">" . $row["NomeUtente"] . "</td>";
       echo "<td class=\"#\">" . $row["Data"] . "</td>";
       echo "<td class=\"#\">" . $row["Testo"] . "</td>";
-      echo "<td class=\"btn btn-sm btn-danger href=\"> Elimina</td>";
+      echo "<td class=\"#\">" . $row["Valutazione"] . "</td>";
+      //echo "<td class=\"btn btn-sm btn-danger href=\"> Elimina</td>";
       echo "</tr>";
     }
   } else {
