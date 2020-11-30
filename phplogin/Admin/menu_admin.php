@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="Stylesheet_admin.css">
     <link rel="stylesheet" href="Stylesheetmenuadmin.css">
+    <link rel="stylesheet" href="Stylesheetaggiungipizza.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>menu_admin</title>
@@ -20,13 +21,24 @@
       <li><a href="homepage_admin.php">Home</a></li>
       <li><a href="menu_admin.php">Menu </a></li>
       <li><a href="contatti_admin.php">Contatti</a></li>
-      <li><a href="#">Recensioni</a></li>
+      <li><a href="recensioni_admin.php">Recensioni</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
     </ul>
   </div>
 </nav>
+
+
+<form method="get" action="aggiungipizza.php">
+  <button class="block">Aggiungi Pizza</button>
+</form>
+<form method="POST" action="eliminapizza.php">
+    <label for="IDPizza">IDPizza da eliminare: </label>
+    <input type="text" id="name" name="IDPizza" placeholder="Introduci IDPizza da eliminare">
+  <button class="block">Elimina Pizza</button>
+</form>
+
 
 <table>
  <tr>
@@ -62,7 +74,7 @@
       echo "<td class=\"#\">" . $row["Nome_Pizza"] . "</td>";
       echo "<td class=\"#\">" . $row["Ingredienti"] . "</td>";
       echo "<td class=\"#\">" . $row["Prezzo"] . ",00€</td>";
-      echo "<td class=\"btn btn-sm btn-danger href=\"> Elimina</td>";
+      //echo "<td class=\"btn btn-sm btn-danger href=\"> Elimina</td>";
       echo "</tr>";
     }
   } else {
@@ -77,14 +89,6 @@
   ?>
 
 </table>
-
-
-
-<form method="get" action="aggiungipizza.php">
-  <button class="block">Aggiungi Pizza</button>
-</form>
-
-
 
 <footer class="endfooter">
   Copyright &copy; 2020 Mirza Toader, All Rights Reserved.
