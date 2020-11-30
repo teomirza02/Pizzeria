@@ -29,7 +29,7 @@ if (!isset($_SESSION['loggedin'])) {
       <li><a href="homepage_admin.php">Home</a></li>
       <li><a href="menu_admin.php">Menu </a></li>
       <li><a href="contatti_admin.php">Contatti</a></li>
-      <li><a href="#">Recensioni</a></li>
+      <li><a href="recensioni_admin.php">Recensioni</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
