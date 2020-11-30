@@ -23,7 +23,7 @@
       <li><a href="recensioni_public.php">Recensioni</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="index.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li><a href="../index.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     </ul>
   </div>
 </nav>
@@ -60,11 +60,6 @@
   } else {
     echo "0 results";
   }
-
-
-
-
-
   $conn->close();
   ?>
 </div>
