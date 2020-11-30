@@ -16,9 +16,11 @@ $servername = "localhost";
   } 
   $utente = $_POST["cognomenome"];
   $commento = $_POST["commento"];
+  $nomepizza = $_POST["pizze"];
+  $valutazione = $_POST["valutazione"];
 
-  $sql = "INSERT INTO `Commenti`(`NomeUtente`, `Data`, `Testo`) VALUES 
-  ('". $utente ."','". date("Y-m-d") ."','". $commento ."')";
+  $sql = "INSERT INTO `Commenti`(`NomeUtente`, `Data`, `Testo`, `FK_Nome_Pizza`, `Valutazione`) VALUES 
+  ('". $utente ."','". date("Y-m-d") ."','". $commento . "',' ". $nomepizza ."', " . $valutazione . ")";
   if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
   } else {
