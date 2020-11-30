@@ -19,6 +19,52 @@
             <input type="text" id="name" name="cognomenome" placeholder="Introduci il tuo Cognome e Nome - (altrimenti scrivere 'Anonimo')">
             <label for="comm">Commento</label>
             <input type="text" id="commento" name="commento" placeholder="Introduci il tuo Commento..">
+            <label for="comm">Nome Pizza</label>
+            <select id="pizze" name="pizze">
+            <option value="Altro">Altro</option>
+            <?php
+                $servername = "localhost";
+                $username = "root";
+                $password = "1234";
+                $db="Pizzeria";
+
+                // Create connection
+                $conn = new mysqli($servername, $username, $password, $db);
+
+                // Check connection
+                if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+                } 
+
+                $sql = "SELECT `Nome_Pizza` FROM `Pizze`";
+                $result = $conn->query($sql);
+                
+                if ($result->num_rows > 0) {
+                
+                while($row = $result->fetch_assoc()) {
+                    echo "<option value=\"".$row["Nome_Pizza"]."\">" . $row["Nome_Pizza"] . "</option>";
+                }
+                } else {
+                echo "0 results";
+                }
+                $conn->close();
+            ?>
+            
+            </select>
+
+            <label for="value">Choose a Value: - (Default:0)</label>
+            <select id="value" name="valutazione">
+                <option value=1>1</option>
+                <option value=2>2</option>
+                <option value=3>3</option>
+                <option value=4>4</option>
+                <option value=5>5</option>
+                <option value=6>6</option>
+                <option value=7>7</option>
+                <option value=8>8</option>
+                <option value=9>9</option>
+                <option value=10>10</option>
+            </select>
             <input type="submit" value="Scrivi">
         </form>
   </form>
